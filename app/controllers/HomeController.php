@@ -23,7 +23,33 @@ class HomeController extends BaseGuestController {
      */
     public function menu()
     {
-        return $this->layout->main = View::make('guest.home.menu');
+        $groupMenu = array();
+
+        $dish = self::getDish()->get();
+        if($dish) {
+            $dish = $dish->toArray();
+            foreach ($dish as $dishItem) {
+                $groupMenu[$dishItem['category_id']]['category_name'] = $dishItem['category_name'];
+                $groupMenu[$dishItem['category_id']][] = $dishItem;
+            }
+        }
+
+        return $this->layout->main = View::make('guest.home.menu',
+            array('groupMenu' => $groupMenu));
+    }
+
+    public static function getDish() {
+        return Dish::select(
+            'dish.id',
+            'c.name AS category_name',
+            'category_id',
+            'title',
+            'content',
+            'price',
+            'thump_image_name')
+            ->leftjoin('category AS c', 'c.id', '=', 'dish.category_id')
+            ->orderBy('category_id')
+            ->orderBy('dish.id', 'DESC');
     }
 
     /**

@@ -1,6 +1,13 @@
-<span class="whatshot"><a href="menu.html">Find out more</a></span>
-<div>
-    <a href="menu.html">{{ HTML::image($public . '/guest/images/coffee1.jpg', 'no-image') }}</a>
-    <a href="menu.html">{{ HTML::image($public . '/guest/images/coffee2.jpg', 'no-image') }}</a>
-    <a href="menu.html">{{ HTML::image($public . '/guest/images/coffee3.jpg', 'no-image') }}</a>
-</div>
+<span class="whatshot"><a href="{{ URL('home/menu') }}">{{ Lang::get('guest_common.find_out_more') }}</a></span>
+
+@if (isset($dish))
+    <div>
+        @foreach($dish as $dishItem)
+            <a href="{{ URL('home/menu') }}">
+                {{ HTML::image(Dish::getPathDishThumpImage() . '/' . $dishItem['thump_image_name'], 'no-image',
+                    array('width'  => Dish::DISH_THUMP_WIDTH ,
+                          'height' => Dish::DISH_THUMP_HEIGHT)) }}
+            </a>
+        @endforeach
+    </div>
+@endif

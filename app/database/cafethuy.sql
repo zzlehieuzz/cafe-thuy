@@ -45,9 +45,24 @@ CREATE TABLE `dish` (
   `category_id` int(11) NOT NULL COMMENT '2:category_id',
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '3:title',
   `content` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '4:content',
+  `price` decimal(16,2) DEFAULT 0 COMMENT '5:price',
   `thump_image_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '5:thump_image_name',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='dish';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='dish';
+
+-- ----------------------------
+-- Records of dish
+-- ----------------------------
+INSERT INTO `dish` VALUES ('1', '1', 'Bò trứng', null, 50000, null);
+INSERT INTO `dish` VALUES ('2', '1', 'Bò trứng', null, 50000, null);
+INSERT INTO `dish` VALUES ('3', '1', 'Bò bate', null, 50000, null);
+INSERT INTO `dish` VALUES ('4', '1', 'Bò xiếu mại', 50000, null, null);
+INSERT INTO `dish` VALUES ('5', '1', 'Bò', 50000, null, null);
+INSERT INTO `dish` VALUES ('6', '2', 'Cơm sường', 25000, null, null);
+INSERT INTO `dish` VALUES ('7', '2', 'Cơm trứng', 25000, null, null);
+INSERT INTO `dish` VALUES ('8', '2', 'Cơm bò', null, null);
+INSERT INTO `dish` VALUES ('9', '3', 'Cafe đá', null, null);
+INSERT INTO `dish` VALUES ('10', '3', 'Cafe sửa', null, null);
 
 -- ----------------------------
 -- Table structure for dish_image
