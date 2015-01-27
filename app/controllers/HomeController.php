@@ -2,12 +2,7 @@
 
 use Intervention\Image\ImageManagerStatic as SomeUniqueName;
 
-class HomeController extends BaseController {
-
-    /**
-     * The layout that should be used for responses.
-     */
-    protected $layout = 'admin';
+class HomeController extends BaseGuestController {
 
     /**
      *

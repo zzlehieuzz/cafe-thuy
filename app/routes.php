@@ -51,6 +51,15 @@ Route::group(['prefix' => 'dash-board/'], function () {
     });
 });
 
+View::composer('guest.include._menu', function($view){
+    $menu    = MenuBar::select('name', 'routes')->get();
+    $arrMenu = array();
+    if ($menu) {
+        $arrMenu = $menu->toArray();
+    }
+    $view->with('menuItems', $arrMenu);
+});
+
 Route::group(['prefix' => 'dish/'], function () {
     Route::get('/index', array('as' => 'dish-index', 'uses' => 'DishController@index'));
 

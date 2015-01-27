@@ -2,7 +2,7 @@
 
 use Intervention\Image\ImageManagerStatic as SomeUniqueName;
 
-class DishController extends BaseAdminController {
+class DishController extends BaseGuestController {
 
     /**
      *

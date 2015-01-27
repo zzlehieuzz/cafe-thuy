@@ -83,8 +83,8 @@ CREATE TABLE `menu_bar` (
 -- ----------------------------
 -- Records of menu_bar
 -- ----------------------------
-INSERT INTO `menu_bar` VALUES (null, 'Home', 'home-index', null),
-(null, 'Menu', 'home-menu', null),
-(null, 'Gallery', 'home-gallery', null),
-(null, 'Locations', 'home-location', null),
-(null, 'About Us', 'home-about', null);
+INSERT INTO `menu_bar` VALUES (null, 'Trang chủ', 'home/index', null),
+(null, 'Thực đơn', 'home/menu', null),
+(null, 'Hình ảnh', 'home/gallery', null),
+(null, 'Địa điểm', 'home/location', null),
+(null, 'Giới thiệu', 'home/about', null);

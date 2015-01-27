@@ -1,8 +1,8 @@
 <?php
 
-class FavoriteRoad extends Base
+class MenuBar extends Base
 {
-    protected $table = 'favorite_road';
+    protected $table = 'menu_bar';
     protected $primaryKey = 'id';
 
     public $timestamps = false;

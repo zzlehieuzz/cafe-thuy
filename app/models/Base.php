@@ -33,7 +33,7 @@ class Base extends Eloquent
     }
 
     public function newQuery($excludeDeleted = true) {
-        return parent::newQuery()->isActive();
+        return parent::newQuery();//->isActive();
     }
 
     public static function queryPager($query, $page = 1, $limit = 30)

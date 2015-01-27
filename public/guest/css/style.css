@@ -2,14 +2,14 @@
 body {
 	background: url(../images/bg-body.jpg) repeat center top;
 	color: #d5b084;
-	font-family: 'open_sansregular';
+	font-family: "Times New Roman", Times, serif;
 	font-size: 12px;
 	margin: 0;
 	min-width: 960px;
 	padding: 0;
 }
 @font-face {
-	font-family: 'UltraRegular';
+	font-family: "Times New Roman", Times, serif;
 	src: url('../fonts/ultra-webfont.eot');
 	src: url('../fonts/ultra-webfont.eot?#iefix') format('embedded-opentype'),
 	url('../fonts/ultra-webfont.woff') format('woff'),
@@ -66,22 +66,24 @@ p a:hover {
 	margin: 30px 0 0 20px;
 }
 #page div div#header ul {
+	font-weight: bolder;
+	font-size: 15px;
 	float: right;
 	list-style: none;
-	margin: 77px 0 0;
+	margin: 70px 0 0;
 	overflow: hidden;
 	padding: 0;
 	width: 550px;
 }
 #page div div#header ul li {
 	float: left;
-	padding: 0 12px;
+	padding: 0 10px;
 }
 #page div div#header ul li a {
 	color: #db9e29;
 	display: block;
-	font-family: 'UltraRegular';
-	font-size: 16px;
+	/*font-family: 'UltraRegular';*/
+	font-size: 18px;
 	text-decoration: none;
 }
 #page div div#header ul li.current a,
