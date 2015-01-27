@@ -34,7 +34,7 @@
                         </div>
                     @endif
 
-                    {{ Form::text('user_name', 'user01', ['placeholder'=>'Username here', 'class' => 'username']) }}
+                    {{ Form::text('username', 'admin', ['placeholder'=>'Username here', 'class' => 'username']) }}
                     {{ Form::input('password', 'password', '123456', ['placeholder'=>'Password here', 'class' => 'password']) }}
 
                     <p class="clearfix">

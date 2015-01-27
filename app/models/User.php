@@ -28,7 +28,7 @@ class User extends Base implements UserInterface, RemindableInterface
     protected $hidden = array('user_name', 'password');
 
     public static $rules = array(
-        'user_name' => 'Required|Between:5,30',
+        'username' => 'Required|Between:5,30',
         'password'  => 'Required|Between:5,30'
     );
 
