@@ -57,7 +57,17 @@ View::composer('guest.include._menu', function($view){
     if ($menu) {
         $arrMenu = $menu->toArray();
     }
+
     $view->with('menuItems', $arrMenu);
+});
+
+View::composer('guest.include._featured', function($view){
+    $dish = HomeController::getDish()->take(3)->get();
+    if ($dish) {
+        $dish = $dish->toArray();
+    }
+
+    $view->with('dish', $dish);
 });
 
 Route::group(['prefix' => 'dish/'], function () {

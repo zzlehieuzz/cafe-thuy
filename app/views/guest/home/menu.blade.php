@@ -9,62 +9,27 @@
     <div>
         <a href="{{ URL('home/menu') }}" class="whatshot">What&#39;s Hot</a>
         <div>
-            <ul>
-                <li>
-                    <a href="{{ URL('home/menu') }}">{{ HTML::image($public . '/guest/images/coffee1.jpg', 'no-image') }}</a>
-                    <div>
-                        <a href="{{ URL('home/menu') }}">Lorem ipsum</a>
-                        <p>
-                            Lorem ipsum &#36;0.00
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <a href="{{ URL('home/menu') }}">{{ HTML::image($public . '/guest/images/coffee2.jpg', 'no-image') }}</a>
-                    <div>
-                        <a href="{{ URL('home/menu') }}">Dolor sit amet</a>
-                        <p>
-                            Lorem ipsum &#36;0.00
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <a href="{{ URL('home/menu') }}">{{ HTML::image($public . '/guest/images/coffee3.jpg', 'no-image') }}</a>
-                    <div>
-                        <a href="{{ URL('home/menu') }}">Donie quis</a>
-                        <p>
-                            Lorem ipsum &#36;0.00
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <a href="{{ URL('home/menu') }}">{{ HTML::image($public . '/guest/images/coffee4.jpg', 'no-image') }}</a>
-                    <div>
-                        <a href="{{ URL('home/menu') }}">Lorem ipsum</a>
-                        <p>
-                            Lorem ipsum &#36;0.00
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <a href="{{ URL('home/menu') }}">{{ HTML::image($public . '/guest/images/coffee5.jpg', 'no-image') }}</a>
-                    <div>
-                        <a href="{{ URL('home/menu') }}">Dolor sit amet</a>
-                        <p>
-                            Lorem ipsum &#36;0.00
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <a href="{{ URL('home/menu') }}">{{ HTML::image($public . '/guest/images/coffee6.jpg', 'no-image') }}</a>
-                    <div>
-                        <a href="{{ URL('home/menu') }}">Donie quis</a>
-                        <p>
-                            Lorem ipsum &#36;0.00
-                        </p>
-                    </div>
-                </li>
-            </ul>
+            @if (isset($groupMenu))
+                @foreach($groupMenu as $groupMenuItem)
+                    <span style="background-color: crimson; color: #f5f5f5; font-weight: bolder; font-size: 20px; padding: 5px;">{{ $groupMenuItem['category_name'] }}</span>
+                    <?php unset($groupMenuItem['category_name']) ?>
+                    <ul>
+                        @foreach($groupMenuItem as $dishItem)
+                            <li>
+                                <a href="{{ URL('home/menu') }}">
+                                    {{ HTML::image(Dish::getPathDishThumpImage() . '/' . $dishItem['thump_image_name'], 'no-image',
+                                        array('width'  => Dish::DISH_THUMP_WIDTH ,
+                                              'height' => Dish::DISH_THUMP_HEIGHT)) }}
+                                </a>
+                                <div>
+                                    <a style="color: #2b542c">{{ $dishItem['title'] }}</a>
+                                    <p style="color: #287db5">{{ number_format($dishItem['price'])}} VNĐ</p>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endforeach
+            @endif
         </div>
     </div>
 @endsection

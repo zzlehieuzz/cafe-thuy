@@ -577,7 +577,7 @@ p a:hover {
 	display: inline-block;
 }
 #page div div#footer div p.footnote {
-	color: #e2cfae;
+	color: #b98d6c;
 	font-family: 'UltraRegular';
 	font-size: 10px;
 	letter-spacing: -0.025em;
@@ -597,14 +597,14 @@ p a:hover {
 	padding: 0;
 }
 #page div div#footer div.section ul li {
-	border-left: 2px solid #e0ceaa;
+	border-left: 2px solid #b98d6c;
 	float: left;
 	height: 15px;
 	line-height: 13px;
 	padding: 0 10px;
 }
 #page div div#footer div.section ul li a {
-	color: #e0ceab;
+	color: #b98d6c;
 	display: block;
 	font-family: 'UltraRegular';
 	letter-spacing: -0.025em;
@@ -620,7 +620,7 @@ p a:hover {
 	padding: 0 10px 0 0;
 }
 #page div div#footer div.section p {
-	color: #c6a971;
+	color: #b98d6c;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10px;
 	font-weight: bold;
@@ -628,7 +628,7 @@ p a:hover {
 	margin: 20px 0 0;
 }
 #page div div#footer div.section p a {
-	color: #c6a971;
+	color: #b98d6c;
 }
 #page div div#footer div.section p a:hover {
 	color: #91a130;
