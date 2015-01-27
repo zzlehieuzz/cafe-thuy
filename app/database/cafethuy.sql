@@ -16,7 +16,7 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (null, 'admin', 'e10adc3949ba59abbe56e057f20f883e', null, null);
+INSERT INTO `user` VALUES (null, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Ngô Lê Duy Hiếu', null);
 
 -- ----------------------------
 -- Table structure for category

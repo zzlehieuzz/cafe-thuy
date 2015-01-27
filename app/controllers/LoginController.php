@@ -20,7 +20,7 @@ class LoginController extends BaseController {
             $vParams = User::validate($params);
 
             if ($vParams) {
-                $user = User::where('user_name', $params['user_name'])
+                $user = User::where('username', $params['username'])
                     ->where('password', md5($params['password']))->first();
 
                 if($user) {
