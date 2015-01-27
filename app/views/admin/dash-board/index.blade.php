@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('guest')
 
 @section('main')
     dash-board

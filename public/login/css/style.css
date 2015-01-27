@@ -198,8 +198,8 @@
 .form-2 {
     /* Size and position */
     width: 300px;
-    margin: 60px auto 30px;
-    padding: 1px 10px 10px 10px;
+    margin: 100px auto 0px;
+    padding: 5px;
     position: relative;
 
     /* Styles */
@@ -215,33 +215,42 @@
 .form-2 h1 {
     font-size: 15px;
     font-weight: bold;
-    color: #bdb5aa;
-    padding-bottom: 8px;
+    color: #1f2124;
     border-bottom: 1px solid #EBE6E2;
     text-shadow: 0 2px 0 rgba(255,255,255,0.8);
     box-shadow: 0 1px 0 rgba(255,255,255,0.8);
 }
 
-.form-2 h1 .log-in,
+.form-2 h1,
 .form-2 h1 .sign-up {
-    display: inline-block;
     text-transform: uppercase;
 }
 
 .form-2 h1 .log-in {
-    color: #6c6763;
-    padding-right: 2px;
-}
+    color: #1f2124; }
 
 .log-in {
-    font-size: 16px;
-    text-align: center;
-}
+    color: #1f2124 !important;
+    font-weight: bolder;
+    margin: 5px 0 10px 0;
+    border-bottom: solid #BBBBBB thin;
+    font-size: 25px;
+    text-align: center; }
 
 .form-2 h1 .sign-up {
     color: #ffb347;
     padding-left: 2px;
 }
+
+.username {
+    background: url("../../common/img/16x16/user.png") no-repeat 7px 7px;
+    padding-left: 30px !important;
+    font-size: 15px !important; }
+
+.password {
+    background: url("../../common/img/16x16/lock.png") no-repeat 7px 7px;
+    padding-left: 30px !important;
+    font-size: 15px !important; }
 
 .form-2 .float {
     width: 50%;
@@ -321,7 +330,7 @@
 
     /* Font styles */
     font-family: 'Lato', Calibri, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 38px; /* Same as height */
     text-align: center;
     font-weight: bold;
