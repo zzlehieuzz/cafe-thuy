@@ -34,11 +34,6 @@ $(function () {
         getDataForCombo($(this).attr('action'), postId, "createRowForTable('list-shop-category', msg.data);");
     });
 
-    $('#root_road_id').on('change', function () {
-        var postId = {'id': $(this).val()};
-        getDataForCombo($(this).attr('action'), postId, "createRowForTable('list-shop-road', msg.data);");
-    });
-
     $('.openPopup').on('click', function() {
         var action  = $(this).attr('action'),
             params  = $(this).attr('params'),
