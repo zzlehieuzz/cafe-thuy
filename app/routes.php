@@ -1,12 +1,12 @@
 <?php
 
-App::missing(function($exception) {
-    if(!$exception) {
-        $mess = '404 - Page not Found';
-    } else $mess = $exception;
-
-    return View::make('error/page', array('message' => $mess));
-});
+//App::missing(function($exception) {
+//    if(!$exception) {
+//        $mess = '404 - Page not Found';
+//    } else $mess = $exception;
+//
+//    return View::make('error/page', array('message' => $mess));
+//});
 
 Route::get('/', function() {
     return Redirect::route('home-index');
@@ -71,18 +71,19 @@ View::composer('guest.include._featured', function($view){
 });
 
 Route::group(['prefix' => 'dish/'], function () {
-    Route::get('/index', array('as' => 'dish-index', 'uses' => 'DishController@index'));
-
-    Route::get('/', function () {
-        return Redirect::action('DishController@index');
+    Route::get('listDish', function () {
+        return Redirect::action('DishController@listDish', 1);
     });
 
-    Route::get('/createDish', array('as' => 'getCreateDish', 'uses' => 'DishController@createDish'));
-    Route::get('/editDish/{id}', array('as' => 'getEditDish', 'uses' => 'DishController@editDish'));
-    Route::get('/deleteDish/{id}', array('as' => 'getDeleteDish', 'uses' => 'DishController@deleteDetail'));
+    Route::get('/listDish/{page}', array('as' => 'list-dish', 'uses' => 'DishController@listDish'));
+    Route::get('/createDish', array('as' => 'get-create-dish', 'uses' => 'DishController@createDish'));
+    Route::get('/editDish/{dishId}', array('as' => 'get-edit-dish', 'uses' => 'DishController@editDish'));
+    Route::get('/deleteDish/{dishId}', array('as' => 'get-delete-dish', 'uses' => 'DishController@deleteDish'));
 
-    Route::post('/createDish', array('as' => 'postCreateDish', 'uses' => 'DishController@createDish'));
-    Route::post('/editDish/{id}', array('as' => 'postEditDish', 'uses' => 'DishController@editDish'));
+    Route::post('/createDish', array('as' => 'post-create-dish', 'uses' => 'DishController@createDish'));
+    Route::post('/editDish/{dishId}', array('as' => 'post-edit-dish', 'uses' => 'DishController@editDish'));
+
+    Route::get('/popupAddCategory', array('as' => 'popup-get-dish-add-category', 'uses' => 'DishController@popupAddCategory'));
 });
 
 Route::group(['prefix' => 'home/'], function () {

@@ -30,11 +30,11 @@
             <li>
                 @if ($public = Config::get('app.view')) @endif
 
-                <a class="@if (isset($isDishIndex)) {{ 'active' }} @endif" href="{{ URL('dish/index') }}">
-                    <i class="fa fa-table fa-fw"></i>List dish</a>
+                <a class="@if (isset($isDishIndex)) {{ 'active' }} @endif" href="{{ URL('dish/listDish') }}">
+                    <i class="fa fa-table fa-fw"></i> List dish</a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ URL('dish/create-dish') }}"> Create dish</a>
+                        <a href="{{ URL('dish/createDish') }}"> Create dish</a>
                     </li>
                 </ul>
             </li>

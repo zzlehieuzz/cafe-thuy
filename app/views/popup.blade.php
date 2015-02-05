@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
-        @include('include._popup_head')
+        @include('admin.include._popup_head')
     </head>
     <body>
         <div id="wrapper">
