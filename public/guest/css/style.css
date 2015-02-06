@@ -199,8 +199,6 @@ a.logo {
 }
 #page div div#body div div ul li {
 	float: left;
-	height: 320px;
-	width: 220px;
 }
 #page div div#body div div ul li div {
 	background: url(../images/bg-item-title.png) no-repeat center top;
