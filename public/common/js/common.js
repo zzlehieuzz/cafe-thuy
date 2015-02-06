@@ -2,7 +2,6 @@
  * @author: HieuNLD 2014/09/23
  */
 $(function () {
-    var imageList = [];
     /**
      * @author: HieuNLD 2014/09/18
      */
@@ -17,16 +16,6 @@ $(function () {
             }
             window.location.href = action;
         }
-    });
-
-    $('.detailImageId').on('click', function () {
-        var detailImageId = $(this).attr('imageid'),
-            removeDetailImages = $('#removeDetailImages').val();
-
-        imageList.push(detailImageId);
-
-        $('#removeDetailImages').val(imageList);
-        $('.rows_' + detailImageId).remove();
     });
 
     $('#root_category_id').on('change', function () {

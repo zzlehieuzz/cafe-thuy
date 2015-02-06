@@ -62,12 +62,19 @@ View::composer('guest.include._menu', function($view){
 });
 
 View::composer('guest.include._featured', function($view){
-    $dish = HomeController::getDish()->take(3)->get();
+    $dish    = HomeController::getDish()->take(3)->get();
+    $arrDish = array();
     if ($dish) {
         $dish = $dish->toArray();
+
+        foreach ($dish as $key => $dishItem) {
+            $imageUrl = asset(Config::get('app.view')) . '/' . Dish::createPathThump($dishItem['dish_images'][0]['image_name']);
+            $arrDish[$key]['id']         = $dishItem['id'];
+            $arrDish[$key]['image_url'] = $imageUrl;
+        }
     }
 
-    $view->with('dish', $dish);
+    $view->with('dish', $arrDish);
 });
 
 Route::group(['prefix' => 'dish/'], function () {

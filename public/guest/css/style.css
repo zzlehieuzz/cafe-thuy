@@ -44,6 +44,17 @@ p a {
 p a:hover {
 	color: #bfcb75;
 }
+
+a.logo {
+	color: palevioletred;
+	/*padding-top: 20px;*/
+	display: block;
+	/*font-family: 'UltraRegular';*/
+	font-size: 70px;
+	text-decoration: none;
+	font-weight: bolder;
+}
+
 #page {
 	background: url(../images/bg-page.png) repeat;
 	margin: 30px auto 0;
@@ -70,7 +81,7 @@ p a:hover {
 	font-size: 15px;
 	float: right;
 	list-style: none;
-	margin: 70px 0 0;
+	margin: 0px 0 0;
 	overflow: hidden;
 	padding: 0;
 	width: 550px;
@@ -565,7 +576,7 @@ p a:hover {
 }
 #page div div#footer {
 	background: #f5f1e6;
-	height: 120px;
+	height: 50px;
 }
 #page div div#footer div {
 	background: none;
@@ -573,6 +584,14 @@ p a:hover {
 	margin: 20px 0 0 30px;
 	width: 190px;
 }
+
+#address {
+	color: #005fb3;
+	font-size: 15px;
+	font-weight: bolder;
+	text-align: center;
+}
+
 #page div div#footer div a {
 	display: inline-block;
 }

@@ -4,9 +4,9 @@
     <div>
         @foreach($dish as $dishItem)
             <a href="{{ URL('home/menu') }}">
-                {{ HTML::image(Dish::getPathThump() . '/' . $dishItem['thump_image_name'], 'no-image',
-                    array('width'  => Dish::WIDTH_THUMPS_IMAGE ,
-                          'height' => Dish::HEIGHT_THUMPS_IMAGE)) }}
+                {{ HTML::image($dishItem['image_url'], 'no-image', array(
+                'width'=>Dish::WIDTH_THUMPS_IMAGE,
+                'height'=>Dish::HEIGHT_THUMPS_IMAGE)) }}
             </a>
         @endforeach
     </div>

@@ -40,13 +40,12 @@ INSERT INTO `category` VALUES ('3', 'Giải khát', null, 1);
 DROP TABLE IF EXISTS `dish`;
 CREATE TABLE `dish` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '1:Id',
-  `category_id` int(11) NOT NULL COMMENT '2:category_id',
-  `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '3:title',
-  `description` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '4:description',
-  `price` int(11) DEFAULT '0' COMMENT '5:price',
-  `view_num` int(11) NOT NULL DEFAULT '0' COMMENT '6:view_num',
-  `like_num` int(11) NOT NULL DEFAULT '0' COMMENT '7:like_num',
-  `is_active` smallint(1) DEFAULT '1' COMMENT '8:is_active',
+  `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '2:title',
+  `description` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '3:description',
+  `price` int(11) DEFAULT '0' COMMENT '4:price',
+  `view_num` int(11) NOT NULL DEFAULT '0' COMMENT '5:view_num',
+  `like_num` int(11) NOT NULL DEFAULT '0' COMMENT '6:like_num',
+  `is_active` smallint(1) DEFAULT '1' COMMENT '7:is_active',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='dish';
 
@@ -55,8 +54,10 @@ CREATE TABLE `dish` (
 -- ----------------------------
 DROP TABLE IF EXISTS `dish_image`;
 CREATE TABLE `dish_image` (
-  `dish_id` int(11) NOT NULL COMMENT '1:dish_id',
-  `image_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '2:image_name'
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '1:Id',
+  `dish_id` int(11) NOT NULL COMMENT '2:dish_id',
+  `image_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '3:image_name',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='dish_image';
 
 -- ----------------------------

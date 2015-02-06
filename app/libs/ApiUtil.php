@@ -55,4 +55,20 @@ class ApiUtil
 
         return $value;
     }
+
+    public static function scaleHeight($file, $height) {
+        list($w, $h) = getimagesize($file);
+
+        $ratio = $w/$h;
+
+        return array('width' => ceil($height * $ratio), 'height' => $height);
+    }
+
+    public static function scaleWidth($file, $width) {
+        list($w, $h) = getimagesize($file);
+
+        $ratio = $w/$h;
+
+        return array('width' => $width, 'height' => ceil($width * $ratio));
+    }
 }

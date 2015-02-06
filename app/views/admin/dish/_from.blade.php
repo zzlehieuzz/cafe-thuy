@@ -1,15 +1,15 @@
 @if ($public = Config::get('app.view')) @endif
 {{ HTML::script($public . 'common/js/page/dish.js') }}
 
-@if(isset($photo))
-    {{ Form::model($photo, ['route' => [$action, $photo->id], 'method' => 'POST', 'role' => 'form', 'files' => true]) }}
+@if(isset($dish))
+    {{ Form::model($dish, ['route' => [$action, $dish->id], 'method' => 'POST', 'role' => 'form', 'files' => true]) }}
 @else
     {{ Form::open(['route' => $action, 'method' => 'POST', 'role' => 'form', 'files' => true]) }}
 @endif
     <div class="panel panel-primary">
         <div class="panel-header">
             <div style="float: right;">
-                @if(empty($photo))
+                @if(empty($dish))
                     {{ Form::reset('Reset', ['class' => 'btn btn-warning']) }}
                 @endif
                 {{ Form::submit('Save', ['class' => 'btn btn-primary']) }}
@@ -37,7 +37,7 @@
 
                 <div class="form-group">
                     <label>Price ( * )</label>
-                    {{ Form::input('number', 'price', (Input::old('price')) ? Input::old('price') : 0 , ['placeholder'=>'Enter here', 'class' => 'form-control']) }}
+                    {{ Form::input('number', 'price', isset($dish) ? Input::old('price') : 0 , ['placeholder'=>'Enter here', 'class' => 'form-control']) }}
                 </div>
 
                 <div class="form-group">
@@ -46,28 +46,8 @@
                 </div>
 
                 <div class="form-group">
-                    @if(isset($photo))
-                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                            <tbody>
-                                <tr>
-                                    <td width="130">
-                                        @if($photo->image_name)
-                                            {{ HTML::image($public . 'uploads/normal/normal_' . $photo->image_name, 'no-image', array('width' => 120 , 'height' => 160)) }}
-                                        @else
-                                            no-image
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <label>Image</label>
-                                        {{ Form::file('imageFiles[]', ['multiple' => true, 'accept' => 'image/*']) }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    @else
-                        <label>Image</label>
-                        {{ Form::file('imageFiles[]', ['multiple' => true, 'accept' => 'image/*']) }}
-                    @endif
+                    <label>Image</label>
+                    {{ Form::file('imageFiles[]', ['multiple' => true, 'accept' => 'image/*']) }}
                 </div>
             </div>
 
@@ -81,11 +61,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if(isset($listPhotoCategory) && $listPhotoCategory)
-                                @foreach ($listPhotoCategory as $key => $photoCategoryItem)
-                                    <tr class="odd gradeA" id="category_{{$photoCategoryItem['category_id']}}">
-                                        <input name="category_list[]" value="{{$photoCategoryItem['category_id']}}" type="hidden"/>
-                                        <td>{{$photoCategoryItem['category_name']}}</td>
+                            @if(isset($listDishCategory) && $listDishCategory)
+                                @foreach ($listDishCategory as $key => $dishCategoryItem)
+                                    <tr class="odd gradeA" id="category_{{$dishCategoryItem['category_id']}}">
+                                        <input name="category_list[]" value="{{$dishCategoryItem['category_id']}}" type="hidden"/>
+                                        <td>{{$dishCategoryItem['category_name']}}</td>
                                         <td><button type="button" title="Delete" class="btn btn-warning btn-circle" onclick="deleteCategory(this)"><i class="fa fa-times"></i></button></td>
                                     </tr>
                                 @endforeach
@@ -111,14 +91,38 @@
                     </table>
                 </div>
             </div>
+            @if(isset($dish))
+                <div class="col-lg-6">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                        <tr>
+                            <th class="center">List Image</th>
+                            <th class="center" width="50">. . .</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($listImageCategory as $key => $imageCategoryItem)
+                                <tr class="even gradeA rows_{{$imageCategoryItem['id']}}">
+                                    <td class="center">
+                                        {{ HTML::image($imageCategoryItem['image_url'], 'no-image', scaleImageHeight($imageCategoryItem['image_url'], 50)) }}
+                                    </td>
+                                    <td>
+                                        <button type="button" title="Delete" imageId="{{$imageCategoryItem['id']}}" class="btn btn-warning btn-circle bntDeleteImage action"><i class="fa fa-times"></i></button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            @endif
         </div>
 
         <div class="panel-footer">
             <div style="float: right;">
-                @if(empty($photo))
+                @if(empty($dish))
                     {{ Form::reset('Reset', ['class' => 'btn btn-warning']) }}
                 @else
-                    {{ Form::hidden('removeDetailImages', '', ['id' => 'removeDetailImages']) }}
+                    {{ Form::hidden('removeImages', '', ['id' => 'removeImages']) }}
                 @endif
                 {{ Form::submit('Save', ['class' => 'btn btn-primary']) }}
             </div>

@@ -1,5 +1,5 @@
 <div>
-    <a href="{{ URL('home/index') }}">{{ HTML::image($public . 'guest/images/logo2.png', 'no-image') }}</a>
+{{--    <a href="{{ URL('home/index') }}">{{ HTML::image($public . 'guest/images/logo2.png', 'no-image') }}</a>--}}
     <p class="footnote">&copy; {{ Config::get('app.title') }} 2014.<br>All Rights Reserved.</p>
 </div>
 

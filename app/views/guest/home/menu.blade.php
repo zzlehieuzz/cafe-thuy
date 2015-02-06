@@ -16,11 +16,9 @@
                     <ul>
                         @foreach($groupMenuItem as $dishItem)
                             <li>
-                                <a href="{{ URL('home/menu') }}">
-                                    {{ HTML::image(Dish::getPathDishThumpImage() . '/' . $dishItem['thump_image_name'], 'no-image',
-                                        array('width'  => Dish::DISH_THUMP_WIDTH ,
-                                              'height' => Dish::DISH_THUMP_HEIGHT)) }}
-                                </a>
+                                {{--<a href="{{ URL('home/menu') }}">--}}
+                                    {{--{{ HTML::image($dishItem['image_url'], 'no-image', array('width'=>Dish::WIDTH_THUMPS_IMAGE, 'height'=>Dish::WIDTH_THUMPS_IMAGE)) }}--}}
+                                {{--</a>--}}
                                 <div>
                                     <a style="color: #2b542c">{{ $dishItem['title'] }}</a>
                                     <p style="color: #287db5">{{ number_format($dishItem['price'])}} VNĐ</p>

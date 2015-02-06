@@ -3,7 +3,8 @@
 class DishImage extends Base
 {
 
-    protected $table   = 'dish_image';
+    protected $table      = 'dish_image';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
     public function dish() {
@@ -11,6 +12,6 @@ class DishImage extends Base
     }
 
     public static $rules = array(
-        'imageFiles' => 'mimes:jpeg,jpg,png|max:1000'
+        'imageFiles' => 'mimes:jpeg,jpg,png|max:1000000'
     );
 }

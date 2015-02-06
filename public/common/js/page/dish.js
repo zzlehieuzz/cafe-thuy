@@ -1,3 +1,15 @@
+$(function () {
+    var imageList = [];
+
+    $('.bntDeleteImage').on('click', function () {
+        var imageId = $(this).attr('imageid'),
+            removeImages = $('#removeImages').val();
+
+        imageList.push(imageId);
+        $('#removeImages').val(imageList);
+        $('.rows_' + imageId).remove();
+    });
+});
 /**
  * @author: HieuNLD 2014/09/29
  */

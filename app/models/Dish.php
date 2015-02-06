@@ -5,8 +5,8 @@ class Dish extends Base
     const WIDTH_NORMAL_IMAGE  = 400;
     const HEIGHT_NORMAL_IMAGE = 400;
 
-    const WIDTH_THUMPS_IMAGE  = 250;
-    const HEIGHT_THUMPS_IMAGE = 250;
+    const WIDTH_THUMPS_IMAGE  = 220;
+    const HEIGHT_THUMPS_IMAGE = 220;
 
     const LIMIT_SIZE          = 2000;
 
@@ -29,6 +29,10 @@ class Dish extends Base
 
     public function dishCategories() {
         return $this->hasMany('DishCategory', 'dish_id');
+    }
+
+    public function dishImages() {
+        return $this->hasMany('DishImage', 'dish_id');
     }
 
     public static function getPathUpload () {
@@ -61,13 +65,5 @@ class Dish extends Base
 
     public static function createPathThump ($fileName) {
         return self::getPathThump() . '/' . self::PATH_THUMPS_FILE . '_' . $fileName;
-    }
-
-    public static function scaleSize($file, $height) {
-        list($w, $h) = getimagesize($file);
-
-        $ratio = $w/$h;
-
-        return array('width' => ceil($height * $ratio), 'height' => $height);
     }
 }
