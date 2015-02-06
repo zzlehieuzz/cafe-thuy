@@ -57,18 +57,24 @@ class ApiUtil
     }
 
     public static function scaleHeight($file, $height) {
-        list($w, $h) = getimagesize($file);
+        $result = array();
+        if(is_file($file)) {
+            list($w, $h) = getimagesize($file);
+            $ratio  = $w/$h;
+            $result = array('width' => ceil($height * $ratio), 'height' => $height);
+        }
 
-        $ratio = $w/$h;
-
-        return array('width' => ceil($height * $ratio), 'height' => $height);
+        return $result;
     }
 
     public static function scaleWidth($file, $width) {
-        list($w, $h) = getimagesize($file);
+        $result = array();
+        if(is_file($file)) {
+            list($w, $h) = getimagesize($file);
+            $ratio = $w / $h;
+            $result = array('width' => $width, 'height' => ceil($width * $ratio));
+        }
 
-        $ratio = $w/$h;
-
-        return array('width' => $width, 'height' => ceil($width * $ratio));
+        return $result;
     }
 }

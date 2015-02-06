@@ -68,8 +68,12 @@ View::composer('guest.include._featured', function($view){
         $dish = $dish->toArray();
 
         foreach ($dish as $key => $dishItem) {
-            $imageUrl = asset(Config::get('app.view')) . '/' . Dish::createPathThump($dishItem['dish_images'][0]['image_name']);
-            $arrDish[$key]['id']         = $dishItem['id'];
+            $imageUrl = '';
+            if(isset($dishItem['dish_images'][0]['image_name']) && ($dishItem['dish_images'][0]['image_name'])) {
+                $imageUrl = asset(Config::get('app.view')) . '/' . Dish::createPathThump($dishItem['dish_images'][0]['image_name']);
+            }
+
+            $arrDish[$key]['id']        = $dishItem['id'];
             $arrDish[$key]['image_url'] = $imageUrl;
         }
     }

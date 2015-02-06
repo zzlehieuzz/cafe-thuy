@@ -47,7 +47,7 @@ CREATE TABLE `dish` (
   `like_num` int(11) NOT NULL DEFAULT '0' COMMENT '6:like_num',
   `is_active` smallint(1) DEFAULT '1' COMMENT '7:is_active',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='dish';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='dish';
 
 -- ----------------------------
 -- Table structure for dish_image

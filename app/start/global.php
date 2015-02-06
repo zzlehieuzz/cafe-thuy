@@ -19,6 +19,7 @@ ClassLoader::addDirectories(array(
 	app_path().'/libs',
 	app_path().'/database/seeds',
 	app_path().'/config/constants.php',
+	app_path().'/helpers.php',
 
 ));
 

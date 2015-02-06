@@ -39,8 +39,13 @@ class HomeController extends BaseGuestController {
 
         if($dish) {
             $dish = $dish->toArray();
+
             foreach ($dish as $dishItem) {
-                $imageUrl = asset(Config::get('app.view')) . '/' . Dish::createPathThump($dishItem['dish_images'][0]['image_name']);
+                $imageUrl = '';
+                if(isset($dishItem['dish_images'][0]['image_name']) && ($dishItem['dish_images'][0]['image_name'])) {
+                    $imageUrl = asset(Config::get('app.view')) . '/' . Dish::createPathThump($dishItem['dish_images'][0]['image_name']);
+                }
+
                 $dishItem['image_url'] = $imageUrl;
                 unset($dishItem['dish_images']);
 
@@ -56,13 +61,10 @@ class HomeController extends BaseGuestController {
     public static function getDish() {
         return Dish::select(
             'dish.id',
-            'c.name AS category_name',
-            'category_id',
             'title',
             'description',
             'like_num',
             'price')->with('dishImages')
-            ->leftjoin('category AS c', 'c.id', '=', 'dish.category_id')
             ->orderBy('dish.like_num', 'DESC');
     }
 

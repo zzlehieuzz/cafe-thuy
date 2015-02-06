@@ -76,7 +76,7 @@
                                         </td>
                                         <td class="center">
                                             @if($dishItem['image_url'])
-                                                {{ HTML::image($dishItem['image_url'], 'no-image', scaleImageHeight($dishItem['image_url'], 50)) }}
+                                                {{ HTML::image($dishItem['image_url'], 'no-image', array('width' => 50, 'height' => 50)) }}
                                             @else
                                                 no-image
                                             @endif
