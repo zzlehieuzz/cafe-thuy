@@ -356,7 +356,7 @@ a.logo {
 }
 #page div div#body div div#blog ul:first-child li a.readmore {
 	color: #bcc680;
-	display: inline-block;
+	/*display: inline-block;*/
 	font-family: 'UltraRegular';
 	font-size: 10px;
 	letter-spacing: 0.025em;

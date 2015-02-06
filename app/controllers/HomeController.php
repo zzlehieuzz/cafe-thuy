@@ -19,23 +19,33 @@ class HomeController extends BaseGuestController {
 
 
     /**
+     * @param $categoryId
      *
+     * @return \Illuminate\View\View
      */
-    public function menu()
+    public function menu($categoryId = null)
     {
         $groupMenu = array();
 
         $dish = Dish::select(
-        'dish.id',
-        'c.name AS category_name',
-        'dc.category_id',
-        'title',
-        'description',
-        'like_num',
-        'price')->with('dishImages')
-        ->leftjoin('dish_category AS dc', 'dc.dish_id', '=', 'dish.id')
-        ->leftjoin('category AS c', 'c.id', '=', 'dc.category_id')
-        ->orderBy('dish.like_num', 'DESC')->get();
+            'dish.id',
+            'c.name AS category_name',
+            'dc.category_id',
+            'title',
+            'description',
+            'like_num',
+            'price')->with('dishImages')
+            ->leftjoin('dish_category AS dc', 'dc.dish_id', '=', 'dish.id')
+            ->leftjoin('category AS c', 'c.id', '=', 'dc.category_id')
+            ->orderBy('dc.category_id');
+
+        if (Request::isMethod('get')) {
+            if($categoryId) {
+                $dish->where('dc.category_id', $categoryId);
+            }
+        }
+
+        $dish = $dish->get();
 
         if($dish) {
             $dish = $dish->toArray();

@@ -9,16 +9,13 @@
     <div>
         <a href="{{ URL('home/menu') }}" class="whatshot">What&#39;s Hot</a>
         <div>
-            @if (isset($groupMenu))
-                @foreach($groupMenu as $groupMenuItem)
-                    <span style="background-color: crimson; color: #f5f5f5; font-weight: bolder; font-size: 20px; padding: 5px;">{{ $groupMenuItem['category_name'] }}</span>
+            @if (isset($groupMenu) && ($cntMenu = count($groupMenu)))
+                @foreach($groupMenu as $key => $groupMenuItem)
+                    <a href="{{URL('home/menu/'.$key)}}" style="background-color: crimson; color: #f5f5f5; font-weight: bolder; font-size: 20px; padding: 5px;">{{ $groupMenuItem['category_name'] }}</a>
                     <?php unset($groupMenuItem['category_name']) ?>
                     <ul>
                         @foreach($groupMenuItem as $dishItem)
                             <li>
-                                {{--<a href="{{ URL('home/menu') }}">--}}
-                                    {{--{{ HTML::image($dishItem['image_url'], 'no-image', array('width'=>Dish::WIDTH_THUMPS_IMAGE, 'height'=>Dish::WIDTH_THUMPS_IMAGE)) }}--}}
-                                {{--</a>--}}
                                 <div>
                                     <a style="color: #2b542c">{{ $dishItem['title'] }}</a>
                                     <p style="color: #287db5">{{ number_format($dishItem['price'])}} VNĐ</p>
@@ -26,6 +23,9 @@
                             </li>
                         @endforeach
                     </ul>
+                    @if($cntMenu != $key)
+                        <br>
+                    @endif
                 @endforeach
             @endif
         </div>
