@@ -1,4 +1,4 @@
-<meta charset="utf-8">
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 @section('title')
     <title>{{ Config::get('app.title') }}</title>

@@ -16,7 +16,7 @@
                     <ul>
                         @foreach($groupMenuItem as $dishItem)
                             <li>
-                                <div>
+                                <div style="padding-right: 5px;padding-bottom: 2px;">
                                     <a style="color: #2b542c">{{ $dishItem['title'] }}</a>
                                     <p style="color: #287db5">{{ number_format($dishItem['price'])}} VNĐ</p>
                                 </div>
