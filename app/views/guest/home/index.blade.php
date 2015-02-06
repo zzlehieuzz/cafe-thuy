@@ -10,33 +10,38 @@
         @include('guest.include._featured')
     </div>
     <div class="section">
-        <ul>
+        <ul style="padding-bottom: 10px;">
             <li>
                 <a href="blog.html">
-                    {{ HTML::image($public . 'guest/images/coffee-ingredients.jpg', 'no-image') }}</a>
-                <h2><a href="blog.html">Lorem ipsum</a></h2>
+                    {{ HTML::image($public . 'guest/images/coffee-ingredients.jpg', 'no-image', array('width' => 194, 'height' => 194)) }}</a>
+                <h2><a href="blog.html">Cafe</a></h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in tellus id eros iaculis porttitor eget ultrices mauris. Nulla sodales congue ante, id
+                    Được lấy từ thủ phủ cafe của Buôn Ma Thuột đậm đà thơm ngon, cùng hòa quyện với hương ngọt ngào
+                    của cafe Lầm Đồng Bảo Lộc.
+                    Uống ly cafe, hớp 1 ngụm trà của Bảo Lộc
+                    (được đặt ngay tại công ty trứ danh của Bảo Lộc) làm cho ta cảm thấy thăng hoa ...
                 </p>
-                <a href="blog.html" class="readmore">Read More</a>
+                {{--<a href="blog.html" class="readmore">Read More</a>--}}
             </li>
             <li>
                 <a href="blog.html">
-                    {{ HTML::image($public . 'guest/images/black-coffee.jpg', 'no-image') }}</a>
-                <h2><a href="blog.html">Dolor sit amet</a></h2>
+                    {{ HTML::image($public . 'guest/images/milk.jpg', 'no-image', array('width' => 194, 'height' => 194)) }}</a>
+                <h2><a href="blog.html">Sữa tươi</a></h2>
                 <p>
-                    Nulla sodales congue ante, id fermentum mi tincidunt ac. Sed eu vestibulum nisl. Maecenas pharetra hendrerit eros sed laoreet. Maecenas malesuada
+                    Được lấy từ những con bò khỏe mạnh,
+                    tới tận nhà nông để lấy sữa rồi đem nấu sôi, hợp vệ sinh ...
                 </p>
-                <a href="blog.html" class="readmore">Read More</a>
+                {{--<a href="blog.html" class="readmore">Read More</a>--}}
             </li>
             <li>
                 <a href="blog.html">
-                    {{ HTML::image($public . 'guest/images/chocolate.jpg', 'no-image') }}</a>
-                <h2><a href="blog.html">Nullam quis</a></h2>
+                    {{ HTML::image($public . 'guest/images/rong_bien.jpg', 'no-image', array('width' => 194, 'height' => 194)) }}</a>
+                <h2><a href="blog.httuoi7">Rong biển</a></h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in tellus id eros iaculis porttitor eget ultrices mauris. Nulla sodales congue ante, id
+                    Rong biển, bông cúc, mủ trôm được ở quán trực tiếp nấu lấy, chắc lọc sạch sẽ và có nguồn gốc rỏ ràng.
+                    Được nấu sôi cùng hương vị thơm ngon tự nhiên và đặc biệt là không chất bảo quản. (Có bỏ mối)
                 </p>
-                <a href="blog.html" class="readmore">Read More</a>
+                {{--<a href="blog.html" class="readmore">Read More</a>--}}
             </li>
         </ul>
         <div>

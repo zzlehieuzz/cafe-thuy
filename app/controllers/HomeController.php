@@ -27,16 +27,16 @@ class HomeController extends BaseGuestController {
     {
         $groupMenu = array();
 
+        $category = Category::orderBy('id')->lists('name','id');
+
         $dish = Dish::select(
             'dish.id',
-            'c.name AS category_name',
             'dc.category_id',
             'title',
             'description',
             'like_num',
             'price')->with('dishImages')
             ->leftjoin('dish_category AS dc', 'dc.dish_id', '=', 'dish.id')
-            ->leftjoin('category AS c', 'c.id', '=', 'dc.category_id')
             ->orderBy('dc.category_id');
 
         if (Request::isMethod('get')) {
@@ -59,13 +59,13 @@ class HomeController extends BaseGuestController {
                 $dishItem['image_url'] = $imageUrl;
                 unset($dishItem['dish_images']);
 
-                $groupMenu[$dishItem['category_id']]['category_name'] = $dishItem['category_name'];
-                $groupMenu[$dishItem['category_id']][] = $dishItem;
+                $groupMenu[] = $dishItem;
             }
         }
 
         return $this->layout->main = View::make('guest.home.menu',
-            array('groupMenu' => $groupMenu));
+            array('groupMenu' => $groupMenu,
+                  'category' => $category));
     }
 
     public static function getDish() {
