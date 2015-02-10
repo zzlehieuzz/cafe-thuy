@@ -230,10 +230,20 @@
     color: #1f2124; }
 
 .log-in {
-    color: #1f2124 !important;
+    background: #fbd568; /* Fallback */
+    background: -moz-linear-gradient(#fbd568, #ffb347);
+    background: -ms-linear-gradient(#fbd568, #ffb347);
+    background: -o-linear-gradient(#fbd568, #ffb347);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fbd568), to(#ffb347));
+    background: -webkit-linear-gradient(#fbd568, #ffb347);
+    background: linear-gradient(#fbd568, #ffb347);
+    border: 1px solid #f4ab4c;
+    color: #996319;
+    text-shadow: 0 1px rgba(255,255,255,0.3);
     font-weight: bolder;
     margin: 5px 0 10px 0;
-    border-bottom: solid #BBBBBB thin;
+    padding: 5px 0 5px 0;
+    /*border-bottom: solid #BBBBBB thin;*/
     font-size: 25px;
     text-align: center; }
 
