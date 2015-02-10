@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50614
 File Encoding         : 65001
 
-Date: 2015-02-10 18:18:54
+Date: 2015-02-10 18:35:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -183,7 +183,6 @@ INSERT INTO `dish_category` VALUES ('44', '3');
 INSERT INTO `dish_category` VALUES ('71', '3');
 INSERT INTO `dish_category` VALUES ('43', '3');
 INSERT INTO `dish_category` VALUES ('47', '3');
-INSERT INTO `dish_category` VALUES ('46', '3');
 INSERT INTO `dish_category` VALUES ('45', '3');
 INSERT INTO `dish_category` VALUES ('49', '3');
 INSERT INTO `dish_category` VALUES ('65', '3');
@@ -209,6 +208,7 @@ INSERT INTO `dish_category` VALUES ('55', '3');
 INSERT INTO `dish_category` VALUES ('56', '3');
 INSERT INTO `dish_category` VALUES ('54', '3');
 INSERT INTO `dish_category` VALUES ('6', '1');
+INSERT INTO `dish_category` VALUES ('46', '3');
 
 -- ----------------------------
 -- Table structure for dish_image
@@ -219,7 +219,7 @@ CREATE TABLE `dish_image` (
   `dish_id` int(11) NOT NULL COMMENT '2:dish_id',
   `image_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '3:image_name',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='dish_image';
+) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='dish_image';
 
 -- ----------------------------
 -- Records of dish_image
@@ -270,7 +270,6 @@ INSERT INTO `dish_image` VALUES ('78', '44', '20150207055520398.jpeg');
 INSERT INTO `dish_image` VALUES ('79', '71', '20150210091610616.jpg');
 INSERT INTO `dish_image` VALUES ('80', '43', '20150210091922234.jpg');
 INSERT INTO `dish_image` VALUES ('82', '47', '20150210092926538.jpg');
-INSERT INTO `dish_image` VALUES ('84', '46', '20150210093116319.jpg');
 INSERT INTO `dish_image` VALUES ('85', '45', '20150210093136938.png');
 INSERT INTO `dish_image` VALUES ('86', '49', '20150210093403512.jpg');
 INSERT INTO `dish_image` VALUES ('87', '65', '20150210094031162.jpg');
@@ -296,6 +295,7 @@ INSERT INTO `dish_image` VALUES ('109', '55', '20150210102335995.jpg');
 INSERT INTO `dish_image` VALUES ('110', '56', '20150210102547222.jpg');
 INSERT INTO `dish_image` VALUES ('111', '54', '20150210103903922.jpg');
 INSERT INTO `dish_image` VALUES ('112', '6', '20150210110830687.jpg');
+INSERT INTO `dish_image` VALUES ('113', '46', '20150210113354877.jpg');
 
 -- ----------------------------
 -- Table structure for menu_bar
