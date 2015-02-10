@@ -77,4 +77,9 @@ class ApiUtil
 
         return $result;
     }
+
+    public static function googleLink($text = '') {
+        return sprintf('<a href="https://maps.google.co.jp/maps?hl=ja&amp;q=%s" target="_blank">%s</a>', $text);
+    }
+
 }

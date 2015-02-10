@@ -6,17 +6,14 @@
         {{ HTML::image($public . '/guest/images/headline-menu.jpg', 'no-image') }}
         <span id="home">abc <a href="{{ URL('home/menu') }}">Find out why.</a></span>
     </div>
-    <div>
-        {{--<a href="{{ URL('home/menu') }}" class="whatshot">What&#39;s Hot</a>--}}
-        <div style="padding-left: 10px;">
-            @if (isset($groupMenu))
-                <a href="{{URL('home/menu')}}" style="background-color: crimson; color: #f5f5f5; font-weight: bolder; font-size: 20px; padding: 5px;">
-                    Tất cả</a>
-                    @foreach($category as $key => $categoryItem)
-                    <a href="{{URL('home/menu/'.$key)}}" style="background-color: crimson; color: #f5f5f5; font-weight: bolder; font-size: 20px; padding: 5px;">
-                        {{ $categoryItem }}</a>
-                @endforeach
-                <br>
+
+    @if (isset($groupMenu))
+        <a href="{{URL('home/menu')}}" class="menu-dish">Tất cả</a>
+        @foreach($category as $key => $categoryItem)
+            <a href="{{URL('home/menu/'.$key)}}" class="menu-dish">{{ $categoryItem }}</a>
+        @endforeach
+        <div>
+            <div style="padding-left: 10px;">
                 <br>
                 <br>
                 <ul>
@@ -32,7 +29,7 @@
                         </li>
                     @endforeach
                 </ul>
-            @endif
+            </div>
         </div>
-    </div>
+    @endif
 @endsection

@@ -62,7 +62,8 @@ a.logo {
 	width: 940px;
 }
 #page div {
-	background: #f5f1e6 url(../images/bg-logo.jpg) no-repeat left top;
+	/*background: #f5f1e6 url(../images/bg-logo.jpg) no-repeat left top;*/
+	background-color: #ffffff;
 	padding: 0;
 	width: 940px;
 }
@@ -697,3 +698,16 @@ IMG.displayed {
 	display: block;
 	margin-left: auto;
 	margin-right: auto }
+
+a.menu-dish {
+	margin-top: 10px !important;
+	background-color: crimson;
+	color: #f5f5f5;
+	font-weight: bolder;
+	font-size: 20px;
+	padding: 5px 20px 5px 20px !important;
+
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	text-decoration: none;
+}
