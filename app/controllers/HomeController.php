@@ -37,7 +37,7 @@ class HomeController extends BaseGuestController {
             'like_num',
             'price')->with('dishImages')
             ->leftjoin('dish_category AS dc', 'dc.dish_id', '=', 'dish.id')
-            ->orderBy('dc.category_id');
+            ->orderBy('dish.price');
 
         if (Request::isMethod('get')) {
             if($categoryId) {
