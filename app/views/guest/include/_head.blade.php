@@ -7,3 +7,4 @@
 <link rel="icon" type="image/x-icon" href="{{ url(Config::get('app.view') . 'common/img/breakfast.ico') }}" />
 
 {{ HTML::style($public . 'guest/css/style.css') }}
+{{ HTML::style($public . 'common/css/style.css') }}
