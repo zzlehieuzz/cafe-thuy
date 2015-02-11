@@ -1,9 +1,9 @@
 @extends('guest')
 
 @section('main')
-    @if ($public = Config::get('app.view')) @endif
+{{--    @if ($public = Config::get('app.view')) @endif--}}
     <div id="figure">
-        {{ HTML::image($public . '/guest/images/headline-menu.jpg', 'no-image') }}
+        {{ HTML::image($public . '/guest/images/headline-menu.jpg', 'no-image', array('width' => 5)) }}
         <span id="home">abc <a href="{{ URL('home/menu') }}">Find out why.</a></span>
     </div>
 
