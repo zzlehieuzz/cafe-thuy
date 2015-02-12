@@ -122,6 +122,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+		'hisorange\BrowserDetect\Provider\BrowserDetectService',
 //		'Cviebrock\ImageValidator\ImageValidatorServiceProvider',
 //        'Intervention\Image\ImageServiceProvider',
 	),
@@ -190,6 +191,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+		'BrowserDetect'     => 'hisorange\BrowserDetect\Facade\Parser',
 //        'someUniqueName'    => 'Intervention\Image\Facades\Image',
 	),
 
