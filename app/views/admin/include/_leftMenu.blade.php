@@ -10,6 +10,10 @@
             $isDishIndex = true;
             break;
 
+        case 'category-index';
+            $isCategoryIndex = true;
+            break;
+
         default:
             $isDashBoardIndex = true;
             break;
@@ -35,6 +39,20 @@
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ URL('dish/createDish') }}"> Create dish</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a class="@if (isset($isCategoryIndex)) {{ 'active' }} @endif" href="{{ URL('category/listCategory') }}">
+                    <i class="fa fa-table fa-fw"></i> List category</a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ URL('category/createCategory') }}"> Create category</a>
                     </li>
                 </ul>
             </li>
