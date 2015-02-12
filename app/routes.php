@@ -9,6 +9,10 @@
 //});
 
 Route::get('/', function() {
+    if(BrowserDetect::isMobile() || BrowserDetect::isTablet()){
+//        return Redirect::route('mobile-index');
+    } else return Redirect::route('home-index');
+
     return Redirect::route('home-index');
 });
 
@@ -97,6 +101,16 @@ Route::group(['prefix' => 'dish/'], function () {
     Route::get('/popupAddCategory', array('as' => 'popup-get-dish-add-category', 'uses' => 'DishController@popupAddCategory'));
 });
 
+Route::group(['prefix' => 'category/'], function () {
+    Route::get('/listCategory', array('as' => 'list-category', 'uses' => 'CategoryController@listCategory'));
+    Route::get('/createCategory', array('as' => 'get-create-category', 'uses' => 'CategoryController@createCategory'));
+    Route::get('/editCategory/{categoryId}', array('as' => 'get-edit-category', 'uses' => 'CategoryController@editCategory'));
+    Route::get('/deleteCategory/{categoryId}', array('as' => 'get-delete-category', 'uses' => 'CategoryController@deleteCategory'));
+
+    Route::post('/createCategory', array('as' => 'post-create-category', 'uses' => 'CategoryController@createCategory'));
+    Route::post('/editCategory/{categoryId}', array('as' => 'post-edit-category', 'uses' => 'CategoryController@editCategory'));
+});
+
 Route::group(['prefix' => 'home/'], function () {
     Route::get('/index', array('as' => 'home-index', 'uses' => 'HomeController@index'));
     Route::get('/gallery', array('as' => 'home-gallery', 'uses' => 'HomeController@gallery'));
@@ -104,4 +118,12 @@ Route::group(['prefix' => 'home/'], function () {
     Route::get('/menu', array('as' => 'home-menu-not', 'uses' => 'HomeController@menu'));
     Route::get('/menu/{categoryId}', array('as' => 'home-menu', 'uses' => 'HomeController@menu'));
     Route::get('/about', array('as' => 'home-about', 'uses' => 'HomeController@about'));
+});
+
+Route::group(['prefix' => 'mobile/'], function () {
+    Route::get('/', function () {
+        return Redirect::action('MobileController@index');
+    });
+
+    Route::get('/index', array('as' => 'mobile-index', 'uses' => 'MobileController@index'));
 });

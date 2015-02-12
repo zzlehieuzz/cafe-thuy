@@ -47,12 +47,20 @@ p a:hover {
 
 a.logo {
 	color: crimson;
-	/*padding-top: 20px;*/
 	display: block;
-	/*font-family: 'UltraRegular';*/
 	font-size: 70px;
 	text-decoration: none;
 	font-weight: bolder;
+
+	/*background: #fbd568; *//* Fallback */
+	/*background: -moz-linear-gradient(#fbd568, #ffb347);*/
+	/*background: -ms-linear-gradient(#fbd568, #ffb347);*/
+	/*background: -o-linear-gradient(#fbd568, #ffb347);*/
+	/*background: -webkit-gradient(linear, 0 0, 0 100%, from(#fbd568), to(#ffb347));*/
+	/*background: -webkit-linear-gradient(#fbd568, #ffb347);*/
+	/*background: linear-gradient(#fbd568, #ffb347);*/
+	/*border: 1px solid #f4ab4c;*/
+	text-shadow: 0 1px rgba(255,255,255,0.5);
 }
 
 #page {

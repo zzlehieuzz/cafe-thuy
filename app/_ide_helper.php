@@ -12091,6 +12091,9 @@ namespace {
         
     }
 
+    class BrowserDetect extends \hisorange\BrowserDetect\Facade\Parser{
+
+    }
 
 }
 

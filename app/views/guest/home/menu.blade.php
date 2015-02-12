@@ -8,10 +8,10 @@
     </div>
 
     @if (isset($groupMenu))
-        <a href="{{URL('home/menu')}}" class="menu-dish">Tất cả</a>
         @foreach($category as $key => $categoryItem)
             <a href="{{URL('home/menu/'.$key)}}" class="menu-dish">{{ $categoryItem }}</a>
         @endforeach
+        <a href="{{URL('home/menu')}}" class="menu-dish">Tất cả</a>
         <div>
             <div style="padding-left: 10px;">
                 <br>

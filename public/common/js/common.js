@@ -18,6 +18,19 @@ $(function () {
         }
     });
 
+    $('.action-blank').on('click', function () {
+        var action = $(this).attr('action'),
+            title = $(this).attr('title');
+        if (action && action != '') {
+            if (title == 'Delete') {
+                if (!confirm('Are you sure you want to delete this?')) {
+                    return false;
+                }
+            }
+            window.open(action,'_blank');
+        }
+    });
+
     $('#root_category_id').on('change', function () {
         var postId = {'id': $(this).val()};
         getDataForCombo($(this).attr('action'), postId, "createRowForTable('list-shop-category', msg.data);");
