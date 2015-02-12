@@ -9,7 +9,7 @@
 
     @if (isset($groupMenu))
         @foreach($category as $key => $categoryItem)
-            <a href="{{URL('home/menu/'.$key)}}" class="menu-dish">{{ $categoryItem }}</a>
+            <a href="{{URL('home/menu?catId='.$key)}}" class="menu-dish @if($categoryId == $key) menu-active @endif">{{ $categoryItem }}</a>
         @endforeach
         <div>
             <div style="padding-left: 10px;">

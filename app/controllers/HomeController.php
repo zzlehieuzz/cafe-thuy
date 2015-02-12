@@ -19,13 +19,12 @@ class HomeController extends BaseGuestController {
 
 
     /**
-     * @param $categoryId
-     *
      * @return \Illuminate\View\View
      */
-    public function menu($categoryId = null)
+    public function menu()
     {
-        $groupMenu = array();
+        $categoryId = Input::get('catId');
+        $groupMenu  = array();
 
         $category = Category::orderBy('id')->lists('name','id');
 
@@ -64,8 +63,9 @@ class HomeController extends BaseGuestController {
         }
 
         return $this->layout->main = View::make('guest.home.menu',
-            array('groupMenu' => $groupMenu,
-                  'category' => $category));
+            array('groupMenu'  => $groupMenu,
+                  'categoryId' => $categoryId,
+                  'category'   => $category));
     }
 
     public static function getDish() {

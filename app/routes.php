@@ -115,8 +115,7 @@ Route::group(['prefix' => 'home/'], function () {
     Route::get('/index', array('as' => 'home-index', 'uses' => 'HomeController@index'));
     Route::get('/gallery', array('as' => 'home-gallery', 'uses' => 'HomeController@gallery'));
     Route::get('/location', array('as' => 'home-location', 'uses' => 'HomeController@location'));
-    Route::get('/menu', array('as' => 'home-menu-not', 'uses' => 'HomeController@menu'));
-    Route::get('/menu/{categoryId}', array('as' => 'home-menu', 'uses' => 'HomeController@menu'));
+    Route::get('/menu', array('as' => 'home-menu', 'uses' => 'HomeController@menu'));
     Route::get('/about', array('as' => 'home-about', 'uses' => 'HomeController@about'));
 });
 
