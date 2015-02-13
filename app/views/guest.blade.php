@@ -10,7 +10,7 @@
                 <div id="footer">@include('guest.include._footer')</div>
                 <br>
                 <div id="address">
-                    4/1 (267/12) Nguyễn Văn Lượng, P.16, q.Gò Vấp, Hồ Chí Minh, Vietnam <br>
+                    4/1 (267/12) Nguyễn Văn Lượng, P.16, Q.Gò Vấp, Hồ Chí Minh, Vietnam <br>
                 </div><br>
             </div>
         </div>
