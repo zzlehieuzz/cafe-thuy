@@ -96,19 +96,23 @@ a.logo {
 	width: 550px;
 }
 #page div div#header ul li {
-	float: left;
-	padding: 0 10px;
+	float: right;
+	padding: 0 5px;
 }
 #page div div#header ul li a {
-	color: #db9e29;
+	background-color: #f2dede;
+	padding: 10px 8px 12px 8px;
+	color: #b98d6c;
 	display: block;
 	/*font-family: 'UltraRegular';*/
 	font-size: 18px;
 	text-decoration: none;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 #page div div#header ul li.current a,
 #page div div#header ul li a:hover {
-	border-bottom: 5px solid #a2b83c;
+	border-bottom: 10px solid #a2b83c;
 }
 #page div div#body {
 	background: url(../images/separator-long.png) no-repeat bottom center;

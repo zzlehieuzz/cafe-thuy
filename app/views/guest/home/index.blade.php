@@ -39,30 +39,13 @@
                 <h2><a href="blog.httuoi7">Rong biển</a></h2>
                 <p>
                     Rong biển, bông cúc, mủ trôm được ở quán trực tiếp nấu lấy, chắc lọc sạch sẽ và có nguồn gốc rỏ ràng.
-                    Được nấu sôi cùng hương vị thơm ngon tự nhiên và đặc biệt là không chất bảo quản. (Có bỏ mối)
+                    Được nấu sôi cùng hương vị thơm ngon tự nhiên và đặc biệt là không chất bảo quản. (Có bỏ mối) ...
                 </p>
                 {{--<a href="blog.html" class="readmore">Read More</a>--}}
             </li>
         </ul>
         <div>
-            <ul>
-                <li>
-                    <h3><a href="blog.html">Lorem ipsum</a></h3>
-                    <span>28 November 2011</span>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. blandit nunc. Donec in velit sed ante interdum condimentum pretium sit amet erat.
-                    </p>
-                    <a href="blog.html" class="readmore">Read more</a>
-                </li>
-                <li>
-                    <h3><a href="blog.html">Dolor sit amet</a></h3>
-                    <span>25 November 2011</span>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <a href="blog.html" class="readmore">Read more</a>
-                </li>
-            </ul>
+            @include('guest.include._recent_dish')
         </div>
     </div>
 @endsection

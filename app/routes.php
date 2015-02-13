@@ -56,7 +56,7 @@ Route::group(['prefix' => 'dash-board/'], function () {
 });
 
 View::composer('guest.include._menu', function($view){
-    $menu    = MenuBar::select('name', 'routes')->get();
+    $menu    = MenuBar::select('name', 'routes')->orderBy('id', 'DESC')->get();
     $arrMenu = array();
     if ($menu) {
         $arrMenu = $menu->toArray();
@@ -79,6 +79,23 @@ View::composer('guest.include._featured', function($view){
 
             $arrDish[$key]['id']        = $dishItem['id'];
             $arrDish[$key]['image_url'] = $imageUrl;
+        }
+    }
+
+    $view->with('dish', $arrDish);
+});
+
+View::composer('guest.include._recent_dish', function($view){
+    $dish    = HomeController::getDish()->take(5)->get();
+    $arrDish = array();
+    if ($dish) {
+        $dish = $dish->toArray();
+
+        foreach ($dish as $key => $dishItem) {
+            $arrDish[$key]['id']          = $dishItem['id'];
+            $arrDish[$key]['description'] = $dishItem['description'];
+            $arrDish[$key]['title']       = $dishItem['title'];
+            $arrDish[$key]['price']       = $dishItem['price'];
         }
     }
 
