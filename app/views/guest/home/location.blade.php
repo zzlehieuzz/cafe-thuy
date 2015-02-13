@@ -9,79 +9,11 @@
     <div>
         <a href="{{ URL('home/menu') }}" class="whatshot">What&#39;s Hot</a>
         <div>
-            <a href="{{ URL('home/location') }}" class="locations">Locations</a>
-            <div>
-                <dl>
-                    <dt>Yay&#33;KOFFEE</dt>
-                    <dd>Lorem ipsum dolor sit amet</dd>
-                    <dd>Consectetur adipiscing elit</dd>
-                    <dd>Nulla lobortis, arcu odio dapibus odio</dd>
-                    <dd>Mauris et arcu</dd>
-                </dl>
-                <dl>
-                    <dt>Yay&#33;KOFFEE</dt>
-                    <dd>Lorem ipsum dolor sit amet</dd>
-                    <dd>Consectetur adipiscing elit</dd>
-                    <dd>Nulla lobortis, arcu odio dapibus odio</dd>
-                    <dd>Mauris et arcu</dd>
-                </dl>
-                <dl>
-                    <dt>Yay&#33;KOFFEE</dt>
-                    <dd>Lorem ipsum dolor sit amet</dd>
-                    <dd>Consectetur adipiscing elit</dd>
-                    <dd>Nulla lobortis, arcu odio dapibus odio</dd>
-                    <dd>Mauris et arcu</dd>
-                </dl>
-                <dl>
-                    <dt>Yay&#33;KOFFEE</dt>
-                    <dd>Lorem ipsum dolor sit amet</dd>
-                    <dd>Consectetur adipiscing elit</dd>
-                    <dd>Nulla lobortis, arcu odio dapibus odio</dd>
-                    <dd>Mauris et arcu</dd>
-                </dl>
-                <dl>
-                    <dt>Yay&#33;KOFFEE</dt>
-                    <dd>Lorem ipsum dolor sit amet</dd>
-                    <dd>Consectetur adipiscing elit</dd>
-                    <dd>Nulla lobortis, arcu odio dapibus odio</dd>
-                    <dd>Mauris et arcu</dd>
-                </dl>
-                <dl>
-                    <dt>Yay&#33;KOFFEE</dt>
-                    <dd>Lorem ipsum dolor sit amet</dd>
-                    <dd>Consectetur adipiscing elit</dd>
-                    <dd>Nulla lobortis, arcu odio dapibus odio</dd>
-                    <dd>Mauris et arcu</dd>
-                </dl>
-                <dl>
-                    <dt>Yay&#33;KOFFEE</dt>
-                    <dd>Lorem ipsum dolor sit amet</dd>
-                    <dd>Consectetur adipiscing elit</dd>
-                    <dd>Nulla lobortis, arcu odio dapibus odio</dd>
-                    <dd>Mauris et arcu</dd>
-                </dl>
-                <dl>
-                    <dt>Yay&#33;KOFFEE</dt>
-                    <dd>Lorem ipsum dolor sit amet</dd>
-                    <dd>Consectetur adipiscing elit</dd>
-                    <dd>Nulla lobortis, arcu odio dapibus odio</dd>
-                    <dd>Mauris et arcu</dd>
-                </dl>
-                <dl>
-                    <dt>Yay&#33;KOFFEE</dt>
-                    <dd>Lorem ipsum dolor sit amet</dd>
-                    <dd>Consectetur adipiscing elit</dd>
-                    <dd>Nulla lobortis, arcu odio dapibus odio</dd>
-                    <dd>Mauris et arcu</dd>
-                </dl>
-                <dl>
-                    <dt>Yay&#33;KOFFEE</dt>
-                    <dd>Lorem ipsum dolor sit amet</dd>
-                    <dd>Consectetur adipiscing elit</dd>
-                    <dd>Nulla lobortis, arcu odio dapibus odio</dd>
-                    <dd>Mauris et arcu</dd>
-                </dl>
-            </div>
+            <iframe width="690"
+                    height="300"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDekdOlYq0xLzdkFf4SkEeprfHYSyh8-4Q&q=4 đường số 11, 16, Gò Vấp, Hồ Chí Minh, Việt Nam">
+            </iframe>
         </div>
     </div>
 @endsection
