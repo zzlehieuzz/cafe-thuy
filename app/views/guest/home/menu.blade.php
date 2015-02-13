@@ -23,7 +23,7 @@
                             </a>
                             <div style="padding: 0 6px 5px 6px;">
                                 <a style="color: #2b542c">{{ $dishItem['title'] }}</a>
-                                <p style="color: #287db5">{{ number_format($dishItem['price'])}} VNĐ</p>
+                                <p style="color: #287db5"><b>{{ number_format($dishItem['price'])}} VNĐ</b></p>
                             </div>
                         </li>
                     @endforeach
